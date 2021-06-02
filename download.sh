@@ -10,7 +10,7 @@ rm cifar-10-python.tar.gz
 # Download the cinic dataset
 cd ../..
 mkdir -p data/cinic
-wget -P 'data/cinic' wget https://datashare.is.ed.ac.uk/bitstream/handle/10283/3192/CINIC-10.tar.gz
+wget -P 'data/cinic' wget --ca-certificate datashare.ed.ac.uk.chained.crt https://datashare.is.ed.ac.uk/bitstream/handle/10283/3192/CINIC-10.tar.gz
 cd data/cinic
 tar -xzf CINIC-10.tar.gz
 rm CINIC-10.tar.gz
