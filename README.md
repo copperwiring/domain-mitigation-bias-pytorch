@@ -1,18 +1,8 @@
-# Effective Strategies for Bias Mitigation
-Code for the CVPR paper:
+This repository is reproduction of the work done in paper: [Towards Fairness in Visual Recognition: Effective Strategies for Bias Mitigation](https://arxiv.org/abs/1911.11834v2)
 
-[Towards Fairness in Visual Recognition: Effective Strategies for Bias Mitigation](https://arxiv.org/abs/1911.11834v2)
 
-Zeyu Wang, Klint Qinami, Ioannis Christos Karakozis, Kyle Genova, Prem Nair, Kenji Hata, Olga Russakovsky
+Original Authors: Zeyu Wang, Klint Qinami, Ioannis Christos Karakozis, Kyle Genova, Prem Nair, Kenji Hata, Olga Russakovsky
 
-```
-@inproceedings{wang2020fair,
-author = {Zeyu Wang and Klint Qinami and Ioannis Karakozis and Kyle Genova and Prem Nair and Kenji Hata and Olga Russakovsky},
-title = {Towards Fairness in Visual Recognition: Effective Strategies for Bias Mitigation},
-booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-year = {2020}
-}
-```
 
 ## Requirements
 * Python 3.6+
@@ -27,11 +17,16 @@ Then manually download the [CelebA dataset](http://mmlab.ie.cuhk.edu.hk/projects
 
 Run the `preprocess_data.py` to generate data for all experiments (this step involves creating h5py file for CelebA images, so would take some time 1~2 hours)
 
+### Changes
+
+- In the original code, the certificate to download `cinic` data had expired. This issue has been resolved here by replacing it with chained certificate.
+- There are exisitng issues in getting the complete CelebA dataset bcause of their size. This issue will be resolved in next update.
+
 ## Run Experiments
 To conduct experiments, run `main.py` with corresponding arguments (`experiment` specifies which experiment to run, `experiment_name` specifies a name to this experiment for saving the model and result). For example:
 
 ```
-python main.py --experiment celeba_baseline --experiment_name e1 --random_seed 1
+python main.py --experiment cifar_color --experiment_name e1 --random_seed 1
 ```
 
 After running, the experiment result will be saved under `record/experiment/experiment_name`
